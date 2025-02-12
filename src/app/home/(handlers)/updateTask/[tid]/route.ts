@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { updateTask } from "@/db";
 import type { NextRequest } from "next/server";
 
-
-
 export async function PUT(request: NextRequest)
 {
     try{
