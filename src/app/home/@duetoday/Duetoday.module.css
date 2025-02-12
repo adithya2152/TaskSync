@@ -1,0 +1,96 @@
+.container {
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.taskList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.taskItem {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out, opacity 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.taskItem:hover {
+    transform: scale(1.02);
+}
+
+.taskTitle {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.taskDescription {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.3rem 0 0;
+}
+
+.priorityBadge {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+    margin-left: 1rem;
+}
+
+.high {
+    background-color: #ff4d4d;
+}
+
+.medium {
+    background-color: #ffa500;
+}
+
+.low {
+    background-color: #4caf50;
+}
+
+/* Hover Overlay for "Complete Task" */
+.completeOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.taskItem:hover .completeOverlay {
+    opacity: 1;
+}
+
+/* Strike-through Animation for Completed Task */
+.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+    transform: scale(0.98);
+    transition: opacity 0.3s ease-in-out, transform 0.2s;
+}

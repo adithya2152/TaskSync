@@ -1,11 +1,18 @@
-import {create} from 'zustand'
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-type loginState  = {
-    isLoggedin: boolean,
-    toggleLogin: () => void
-}
+type ThemeState = {
+  mode: "light" | "dark";
+  toggleTheme: () => void;
+};
 
-export const useLoginStore = create<loginState>((set) => ({
-    isLoggedin: false,
-    toggleLogin: () => set((state) => ({ isLoggedin: !state.isLoggedin })),
-}))
+export const useThemeStore = create<ThemeState>()(
+  persist(
+    (set) => ({
+      mode: "light", // Default mode
+      toggleTheme: () =>
+        set((state) => ({ mode: state.mode === "light" ? "dark" : "light" })),
+    }),
+    { name: "theme-storage" } // Key for localStorage
+  )
+);

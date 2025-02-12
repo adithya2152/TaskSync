@@ -1,13 +1,16 @@
+"use client";
 import Image from "next/image";
 import SecurityIcon from "@mui/icons-material/Security";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
+      <Header NavMOde="landing"/>
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">Welcome to TaskSync</h1>
@@ -70,7 +73,7 @@ export default function Home() {
         <p className="cta-description">
           Get started with TaskSync and experience a seamless way to manage your tasks. Stay organized and take control of your day like never before.
         </p>
-        <button className="cta-button">
+        <button onClick={() => {window.location.href="/register"}} className="cta-button">
           Get Started <ArrowForwardIcon />
         </button>
       </section>
